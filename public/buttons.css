@@ -1,0 +1,33 @@
+.buttons{
+    display: flex;
+}
+
+.operatorsBtnWrapp{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+
+.numbers{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.numbtn{
+    width: 33.3%;
+    height: 5em;
+}
+.operatorsBtn{
+    width: 40%;
+    height: 5em; 
+}
+
+.history{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

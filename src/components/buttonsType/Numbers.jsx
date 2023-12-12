@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
+export default function NumbersBtn(){
 
-export default function NumberButtons(){
     const [numbers, setNumbers] = useState([])
 
     let numbersArray = []
@@ -15,10 +15,10 @@ export default function NumberButtons(){
     },[])
 
     return(
-    <>
-    <div className="numbers">
-        {numbers.map((num, index) => <button className="numbtn" key={index}>{num}</button>)}
-    </div>
-    </>
-        )
+        <>
+            <div className="numbers">
+                {numbers.map((num, index) => <button className="numbtn" key={index}>{num}</button>)}
+            </div>
+        </>
+    )
 }
