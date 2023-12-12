@@ -3,13 +3,13 @@ import { CalcContext } from "../../contexts/calcContext"
 
 export default function OperatorBtns(){
 
-    const {sayHi} = useContext(CalcContext)
+    const {sayHi, updateCalc} = useContext(CalcContext)
 
     console.log(sayHi)
     return(
         <>
             <div className="operatorsBtnWrapp">
-                <button className="operatorsBtn">-</button>
+                <button className="operatorsBtn" onClick={() => updateCalc('-')}>-</button>
                 <button className="operatorsBtn">+</button>
                 <button className="operatorsBtn">x</button>
                 <button className="operatorsBtn">÷</button>

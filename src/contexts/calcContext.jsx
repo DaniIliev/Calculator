@@ -6,7 +6,7 @@ export const CalcContext = createContext()
 
 
 export const CalcProvider = ({children}) => {
-    const [calc, setCalc] = useState()
+    const [calc, setCalc] = useState("")
 
     const updateCalc = value => {
         setCalc(calc + value)
