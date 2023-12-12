@@ -24,7 +24,15 @@ export default function NumbersBtn(){
     return(
         <>
             <div className="numbers">
-                {numbers}
+                <div className="numbers-list">
+                    {numbers}
+                </div>
+            
+                <div className="lastRow">
+                    <button className="numbtn" onClick={() => updateCalc('.')}>,</button>
+                    <button className="numbtn" onClick={() => updateCalc('0')}>0</button>
+                    <button className="numbtn history">Ans<span>History</span></button>
+                </div>
             </div>
         </>
     )

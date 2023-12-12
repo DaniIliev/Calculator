@@ -8,7 +8,7 @@ export const CalcContext = createContext()
 export const CalcProvider = ({children}) => {
     const [calc, setCalc] = useState("")
 
-    const ops = ['/', 'x', '+', '-', ',', '(', ')'];
+    const ops = ['/', '*', '+', '-', '.', '(', ')'];
 
     const updateCalc = (value) => {
         if(ops.includes(value) && calc == "" ||

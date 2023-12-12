@@ -7,7 +7,7 @@ export default function Buttons(){
 
     return(
     <>
-        <div className="buttons">
+        <div className="buttonsWrapp">
             <NumbersBtn/>
             <OperatorBtns/>
         </div>

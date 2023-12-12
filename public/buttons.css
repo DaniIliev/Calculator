@@ -4,11 +4,17 @@
 
 .operatorsBtnWrapp{
     display: flex;
-    /* flex-direction: column; */
+    width: 150px;
     flex-wrap: wrap;
 }
 
 .numbers{
+    display: flex;
+    flex-direction: column;
+
+}
+.lastRow,
+.numbers-list{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +27,19 @@
     height: 5em;
 }
 .operatorsBtn{
-    width: 40%;
+    width: 49%;
     height: 5em; 
 }
-
+.result{
+    width: 98%;
+}
 .history{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.buttonsWrapp{
+    display: flex;
 }
