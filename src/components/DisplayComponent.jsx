@@ -1,14 +1,21 @@
-import { useContext } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CalcContext } from "../contexts/calcContext"
 
 export default function DisplayComponent(){
+    
+    const [calcResult, setCalcResult] = useState("")
+    const {calc, ops} = useContext(CalcContext)
+    
+    useEffect(() => {
+        if(!ops.includes(calc.slice(-1))){
+            setCalcResult(eval(calc))
+           }
+    }, [calc])
 
-    const {calc} = useContext(CalcContext)
     return(
         <>
            <div className="display">
-                {/* <span>(0)</span> 0 */}
-                {calc || 0}
+                <span>({calcResult})</span>  {calc || 0}
             </div> 
         </>
     )

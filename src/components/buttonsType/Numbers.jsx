@@ -1,14 +1,21 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
+import { CalcContext } from "../../contexts/calcContext"
 export default function NumbersBtn(){
-
+    const {updateCalc} = useContext(CalcContext)
     const [numbers, setNumbers] = useState([])
 
     let numbersArray = []
 
     useEffect(() => {
         for(let i = 1; i <= 9; i++){
-            console.log(i)
-            numbersArray.push(i)
+            numbersArray.push(
+                <button 
+                className="numbtn" 
+                key={i}
+                onClick={() => updateCalc(i.toString())}
+                >{i}
+                </button>
+            )
         }
 
         setNumbers(numbersArray)
@@ -17,7 +24,7 @@ export default function NumbersBtn(){
     return(
         <>
             <div className="numbers">
-                {numbers.map((num, index) => <button className="numbtn" key={index}>{num}</button>)}
+                {numbers}
             </div>
         </>
     )
