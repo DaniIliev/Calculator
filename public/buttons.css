@@ -4,7 +4,7 @@
 
 .operatorsBtnWrapp{
     display: flex;
-    width: 150px;
+    width: 200px;
     flex-wrap: wrap;
 }
 
@@ -29,9 +29,16 @@
 .operatorsBtn{
     width: 49%;
     height: 5em; 
+    background-color: rgb(250, 47, 47);
+    color: white;
 }
 .result{
     width: 98%;
+    background-color: brown;
+}
+.operatorsBtn:hover,
+.result:hover{
+    background-color: rgb(196, 39, 39);
 }
 .history{
     display: flex;
@@ -42,4 +49,33 @@
 
 .buttonsWrapp{
     display: flex;
+}
+.xna2,
+.delElement{
+    z-index: 100000;
+    width: 20%;
+    height: auto;
+}
+
+.deleteSingleEl{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+/* .trigonometricButtons, */
+.symbolButtons{
+    display: flex;
+    width: 499px;
+}
+/* .trigonometricBtn, */
+.symbolBtn{
+    width: 19.9%;
+}
+.trigonometricButtons{
+    width: 499px;
+}
+
+.trigonometricBtn{
+    width: 19.9%;
 }

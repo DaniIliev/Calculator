@@ -3,7 +3,7 @@ import { CalcContext } from "../../contexts/calcContext"
 
 export default function OperatorBtns(){
 
-    const {updateCalc} = useContext(CalcContext)
+    const {updateCalc, calculate} = useContext(CalcContext)
 
     return(
         <>  
@@ -14,7 +14,7 @@ export default function OperatorBtns(){
                     <button className="operatorsBtn" onClick={() => updateCalc('-')}>-</button>
                     <button className="operatorsBtn" onClick={() => updateCalc('*')}>x</button>
                     <button className="operatorsBtn" onClick={() => updateCalc('÷')}>÷</button>
-                    <button className="operatorsBtn result">=</button>
+                    <button className="operatorsBtn result" onClick={() => calculate()}>=</button>
                 </div>
   
         </>
