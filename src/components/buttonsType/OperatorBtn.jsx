@@ -9,7 +9,7 @@ export default function OperatorBtns(){
         <>  
                 <div className="operatorsBtnWrapp">
                     <button className="operatorsBtn" onClick={() => updateCalc('(')}>{'('}</button> 
-                    <button className="operatorsBtn" onClick={() => updateCalc('\)')}>{')'}</button> 
+                    <button className="operatorsBtn" onClick={() => updateCalc(')')}>{')'}</button> 
                     <button className="operatorsBtn" onClick={() => updateCalc('+')}>+</button>
                     <button className="operatorsBtn" onClick={() => updateCalc('-')}>-</button>
                     <button className="operatorsBtn" onClick={() => updateCalc('*')}>x</button>

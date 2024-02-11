@@ -4,14 +4,15 @@ import { createContext, useContext, useState } from "react";
 
 export const CalcContext = createContext()
 
+export const ops = ['/', '*', '+', '-', '.'];
+
 
 export const CalcProvider = ({children}) => {
     const [calc, setCalc] = useState("");
     const [result, setResult] = useState(0);
-
     const [displayValues, setDisplayValues] = useState("");
 
-    const ops = ['/', '*', '+', '-', '.'];
+
     const trigonometric = ['cos', 'sin', 'tan', 'log', 'in'];
 
     const updateCalc = (value) => {
@@ -19,18 +20,18 @@ export const CalcProvider = ({children}) => {
         //     console.log()
         //     return setDisplayValues(state => state + value)
         // }
-
         if(ops.includes(value) && calc == "" ||
-         ops.includes(value) && ops.includes(calc.slice(-1))
+         ops.includes(value) && ops.includes(calc.slice(-1)
+         )
          ) {
             return
          }
          setDisplayValues(state => state + value)
-         setCalc(state => state + value)
+         setCalc(state => state + value.replace('(', "").replace(')', ""))
     }
 
     const calculate = () => {
-        setResult(eval(calc).toString())
+        setResult(eval(calc)?.toString())
     }
 
     const contextValues = {
@@ -38,6 +39,7 @@ export const CalcProvider = ({children}) => {
         calculate,
         setCalc,
         setResult,
+        setDisplayValues,
         result: result || undefined,
         calc: calc || "0",
         displayValues: displayValues || "0",

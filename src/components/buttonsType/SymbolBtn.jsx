@@ -1,26 +1,34 @@
 import { useContext } from "react"
-import { CalcContext } from "../../contexts/calcContext"
+import { CalcContext, ops } from "../../contexts/calcContext"
 
 
 export default function SymbolBtn(){
 
-    const {calc, setCalc, setResult} = useContext(CalcContext)
+    const {calc, setCalc, setResult, setDisplayValues} = useContext(CalcContext)
 
     const reset = () => {
-        setCalc("")
+        setCalc("");
+        setDisplayValues('');
+        setResult(calc);
     }
 
     const deleteLastChar = () => {
-        setCalc(state => state.toString()?.slice(0, -1));
+        setCalc(state => state?.toString()?.slice(0, -1));
+        setDisplayValues(state => state?.toString()?.slice(0, -1))
     }
 
     const mathSqrt = () => {
-        const sqrt = Math.sqrt(calc).toString()
+        const sqrt = calc != 0 && Math.sqrt(calc).toString()
         setResult(sqrt)
     }
 
     const secondDegree = () => {
-        console.log(String.fromCharCode(94))
+        const lastNum =  calc.length != 0 && calc.includes(ops) ? calc.toString().slice(-1) : calc.toString();
+        console.log(calc.toString())
+        console.log(lastNum)
+        console.log(Math.pow(calc, 2))
+        // const pow = calc?.toString()?.slice(0, -1)
+        // setCalc(Math.pow(pow, 2))
     }
 
     return(

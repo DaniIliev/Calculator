@@ -4,12 +4,15 @@ import { CalcContext } from "../contexts/calcContext"
 export default function DisplayComponent(){
     
     const [calcResult, setCalcResult] = useState("")
-    const {calc, ops, result, displayValues} = useContext(CalcContext)
+    const {calc, ops, setResult, setCalc, result,setDisplayValues, displayValues} = useContext(CalcContext)
     
     useEffect(() => {
+        if(result && ops.includes(calc?.slice(-1))){
+            setCalc(result)
+            setResult(0)
+        }
         if(!ops.includes(calc?.slice(-1))){
-            console.log(calc)
-            setCalcResult(eval(calc.replace('(', '')))
+            setCalcResult(eval(calc.replace('(', '').replace(')', '')))
            }
     }, [calc])
 
